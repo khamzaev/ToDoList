@@ -5,9 +5,7 @@
 
 ## Скриншоты
 
-<img src="Screenshots/todoList.png" width="200"/>
-<img src="Screenshots/overlay.png" width="200"/>
-<img src="Screenshots/todoEditor.png" width="200"/>
+<img src="Screenshots/todoList.png" width="200"/> <img src="Screenshots/overlay.png" width="200"/> <img src="Screenshots/todoEditor.png" width="200"/>
 
 
 ## Основные возможности
