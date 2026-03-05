@@ -17,6 +17,12 @@ final class TodoListInteractor: TodoListInteractorProtocol {
     private let didImportKey = "didImportRemoteTodos"
     
     
+    init(repository: TodosRepositoryProtocol, api: TodosAPIProtocol, defaults: UserDefaults = .standard) {
+        self.repository = repository
+        self.api = api
+        self.defaults = defaults
+    }
+    
     // MARK: - Helpers
     
     private func onMain(_ block: @escaping () -> Void) {
@@ -42,11 +48,6 @@ final class TodoListInteractor: TodoListInteractorProtocol {
         }
     }
     
-    init(repository: TodosRepositoryProtocol, api: TodosAPIProtocol, defaults: UserDefaults = .standard) {
-        self.repository = repository
-        self.api = api
-        self.defaults = defaults
-    }
     
     func fetchTodos(query: String?) {
         repository.fetch(query: query) { [weak self] result in
