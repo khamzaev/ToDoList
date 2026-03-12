@@ -17,9 +17,13 @@ final class TodosAPI: TodosAPIProtocol {
     private let url: URL
     
     init(
-        url: URL = URL(string: "https://dummyjson.com/todos")!,
+        url: URL? = URL(string: "https://dummyjson.com/todos"),
         session: URLSession = .shared
     ) {
+        guard let url else {
+            preconditionFailure("Invalid todos URL")
+        }
+        
         self.url = url
         self.session = session
     }

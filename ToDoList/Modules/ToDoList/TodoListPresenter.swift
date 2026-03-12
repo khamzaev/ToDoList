@@ -44,6 +44,10 @@ final class TodoListPresenter: TodoListPresenterProtocol {
         router.openCreate()
     }
     
+    func didSelect(id: Int64) {
+        router.openEditor(id: id)
+    }
+    
     func didDelete(id: Int64) {
         interactor.deleteTodo(id: id)
     }
@@ -53,9 +57,6 @@ final class TodoListPresenter: TodoListPresenterProtocol {
         interactor.fetchTodos(query: q.isEmpty ? nil : q)
     }
     
-    func didSelect(id: Int64) {
-        router.openEditor(id: id)
-    }
     
     func didTapToggleCompleted(id: Int64) {
         interactor.toggleCompleted(id: id)
